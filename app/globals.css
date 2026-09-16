@@ -1,11 +1,11 @@
 :root {
-  --bg: #fff0f6;
   --card: #ffffff;
   --primary: #ff4d8d;
   --primary-dark: #d93b79;
   --success: #4caf50;
   --danger: #ef5350;
   --text: #2d1b2f;
+  --heart: #ff75aa;
 }
 
 * {
@@ -44,11 +44,72 @@ body {
   text-align: center;
 }
 
+.home-card {
+  position: relative;
+  overflow: hidden;
+  padding-top: 52px;
+}
+
 h1,
 h2 {
   margin: 0 0 24px;
   font-size: clamp(2rem, 4vw, 2.8rem);
 }
+
+.cats {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 auto 28px;
+}
+
+.cats img {
+  width: 105px;
+  height: 105px;
+  object-fit: cover;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 5px 12px rgba(217, 59, 121, 0.2);
+}
+
+.heart-ring {
+  position: absolute;
+  z-index: 0;
+  width: 330px;
+  height: 330px;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.heart-ring span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: var(--heart);
+  font-size: 24px;
+  transform: rotate(calc(var(--angle) * 1deg)) translateY(-145px) rotate(calc(var(--angle) * -1deg));
+}
+
+.heart-ring span:nth-child(1) { --angle: 0; }
+.heart-ring span:nth-child(2) { --angle: 22.5; }
+.heart-ring span:nth-child(3) { --angle: 45; }
+.heart-ring span:nth-child(4) { --angle: 67.5; }
+.heart-ring span:nth-child(5) { --angle: 90; }
+.heart-ring span:nth-child(6) { --angle: 112.5; }
+.heart-ring span:nth-child(7) { --angle: 135; }
+.heart-ring span:nth-child(8) { --angle: 157.5; }
+.heart-ring span:nth-child(9) { --angle: 180; }
+.heart-ring span:nth-child(10) { --angle: 202.5; }
+.heart-ring span:nth-child(11) { --angle: 225; }
+.heart-ring span:nth-child(12) { --angle: 247.5; }
+.heart-ring span:nth-child(13) { --angle: 270; }
+.heart-ring span:nth-child(14) { --angle: 292.5; }
+.heart-ring span:nth-child(15) { --angle: 315; }
+.heart-ring span:nth-child(16) { --angle: 337.5; }
 
 .options {
   display: flex;
@@ -93,4 +154,20 @@ h2 {
 
 .message-card {
   padding: 48px 24px;
+}
+
+@media (max-width: 480px) {
+  .cats img {
+    width: 84px;
+    height: 84px;
+  }
+
+  .heart-ring {
+    width: 280px;
+    height: 280px;
+  }
+
+  .heart-ring span {
+    transform: rotate(calc(var(--angle) * 1deg)) translateY(-125px) rotate(calc(var(--angle) * -1deg));
+  }
 }

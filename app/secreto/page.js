@@ -7,10 +7,10 @@ export default function SecretPage() {
         <h2>Você quer saber?</h2>
         <div className="options">
           <Link href="/sim" className="button button-success">
-            sim
+            Sim
           </Link>
           <Link href="/nao" className="button button-danger">
-            não
+            Não
           </Link>
         </div>
       </div>

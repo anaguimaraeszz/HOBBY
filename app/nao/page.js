@@ -4,7 +4,7 @@ export default function NoPage() {
   return (
     <main className="container">
       <div className="card message-card">
-        <h1>quer saber sim</h1>
+        <h1>Quer saber sim</h1>
         <Link href="/" className="button">
           Voltar
         </Link>
